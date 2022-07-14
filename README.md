@@ -2,7 +2,7 @@
 
 To-do list com React.
 
-###Dependências
+### Dependências
 - Redux `npm install redux`
 - React-Redux `npm install react-redux`
 
