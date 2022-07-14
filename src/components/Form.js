@@ -1,13 +1,16 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTask } from '../actions/listActions';
 
-function Form(props) {
+function Form() {
 
     const [text, setText] = useState('');
+    const dispatch = useDispatch();
 
     return (
         <form>
             <input onChange={(e) => { setText(e.target.value) }} type="text" placeholder="Digite uma tarefa..." value={text} />
-            <button onClick={(e) => {e.preventDefault(); props.addTask(text); setText('')}}>Add</button>
+            <button onClick={(e) => { e.preventDefault(); dispatch(addTask(text)); setText('') }}>Add</button>
         </form>
     );
 
